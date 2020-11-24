@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Mail\Email;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,13 +21,3 @@ Auth::routes();
 
 //routes pages statics
 Route::get('/home', 'HomeController@index')->name('home');
-
-//routes d'envoi d'email'
-Route::get('/testmail', function() {
-  
-  $data = ['message' => 'This is a test'];
-  
-  Mail::to('prixmarche@yopmail.com')->send(new Email($data));
- 
-  echo "Email envoyé";
-});
