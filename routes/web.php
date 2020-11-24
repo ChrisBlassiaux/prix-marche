@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\Email;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,15 +17,18 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//routes d'authentification
 Auth::routes();
 
+//routes pages statics
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/send-mail', function() {
-   $details = [
-     'title'=>'Mail test',
-     'body'=>'This is a mail test'   
-   ];
-   \Mail::to('chrisblassiaux@gmail.com')->send(new \App\Mail\Email($details));
-   echo "Email has been sent!";
+//routes d'envoi d'email'
+Route::get('/testmail', function() {
+  
+  $data = ['message' => 'This is a test'];
+  
+  Mail::to('prixmarche@yopmail.com')->send(new Email($data));
+ 
+  echo "Email envoyé";
 });
