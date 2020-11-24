@@ -12,5 +12,10 @@ class StaticPagesController extends Controller
     {
       return view('static_pages.index');
     }
+
+    public function frequently_questions()
+    {
+      return view('static_pages.frequently_questions');
+    }
     
 }

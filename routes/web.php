@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'StaticPagesController@landing_page');
 
 //routes d'authentification
 Auth::routes();
 
 //routes pages statics
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'StaticPagesController@landing_page');
+Route::get('/questionsfrequentes', 'StaticPagesController@frequently_questions')->name('frequently_questions');
