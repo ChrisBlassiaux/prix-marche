@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 //routes pages statics
-Route::get('/', 'StaticPagesController@landing_page');
+Route::get('/', 'StaticPagesController@landing_page')->name('root');
 Route::get('/questionsfrequentes', 'StaticPagesController@frequently_questions')->name('frequently_questions');
