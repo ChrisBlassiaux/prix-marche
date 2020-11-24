@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 //routes d'authentification
 Auth::routes();
+
+//routes Products
+Route::resource('products', 'ProductController');
 
 //routes pages statics
 Route::get('/', 'StaticPagesController@landing_page')->name('root');

@@ -49,7 +49,7 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Catalogue</a>
+                <a class="nav-link" href="{{ route('products.index') }}">Catalogue</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('frequently_questions') }}">Questions fréquentes</a>
