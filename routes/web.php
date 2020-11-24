@@ -20,3 +20,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/send-mail', function() {
+   $details = [
+     'title'=>'Mail test',
+     'body'=>'This is a mail test'   
+   ];
+   \Mail::to('chrisblassiaux@gmail.com')->send(new \App\Mail\Email($details));
+   echo "Email has been sent!";
+});
