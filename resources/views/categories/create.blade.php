@@ -29,6 +29,10 @@
                   <strong>Nom:</strong>
                   <input type="text" name="name" class="form-control" placeholder="Cuisine...">
               </div>
+              <div class="form-group">
+                <strong>Icon:</strong>
+                <input type="text" name="icon" class="form-control" placeholder="<i class='fas fa-utensils fa-3x'></i>">
+            </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">
               <button type="submit" class="btn btn-primary">Ajouter</button>

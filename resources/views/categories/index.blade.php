@@ -24,6 +24,7 @@
           <tr>
               <th>Numéro</th>
               <th>Nom</th>
+              <th>Icon</th>
               <th>Date de création</th>
               <th>Actions</th>
           </tr>
@@ -31,6 +32,7 @@
               <tr>
                   <td>{{ $category->id }}</td>
                   <td>{{ $category->name }}</td>
+                  <td>{{ $category->icon }}</td>
                   <td>{{ $category->created_at }}</td>
                   <td>
                     <a href="{{ route('categories.show', ['category' => $category->id]) }}" class="btn btn-secondary">

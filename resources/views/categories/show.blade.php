@@ -19,6 +19,10 @@
                 <strong>Name:</strong>
                 {{ $category->name }}
             </div>
+            <div class="form-group">
+                <strong>Icon:</strong>
+                {{ $category->icon }}
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
