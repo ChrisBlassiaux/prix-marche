@@ -47,8 +47,8 @@
             <div class="row">
             <div class="col-sm-6">
                 <div>
-                <a href="#" class="d-block pt-2 pb-2">Accueil</a>
-                <a href="#" class="d-block pt-2 pb-2">Catalogue</a>
+                <a href="{{ route('root') }}" class="d-block pt-2 pb-2">Accueil</a>
+                <a href="{{ route('products.index') }}" class="d-block pt-2 pb-2">Catalogue</a>
                 <a href="{{ route('frequently_questions') }}" class="d-block pt-2 pb-2">Questions fréquentes</a>
                 </div>
             </div>
