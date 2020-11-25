@@ -17,6 +17,7 @@ Auth::routes();
 
 //routes Products
 Route::resource('products', 'ProductController');
+Route::resource('categories', 'CategoryController');
 
 //routes pages statics
 Route::get('/', 'StaticPagesController@landing_page')->name('root');
