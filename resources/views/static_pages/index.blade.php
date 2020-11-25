@@ -9,21 +9,28 @@
             <div class="row mx-auto my-auto">
             <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner w-100" role="listbox">
+                    <?php  $i = 0 ?>
                     @foreach ($products as $product)
-                        <div class="carousel-item active">
-                            <div class="col-md-4">
-                            <a href="products/{{ $product->id }}">
-                            <div class="card">
-                                <img class="img-fluid" src="http://placehold.it/380?text=1">
-                                <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5>
-                                <span>1 €</span> 
-                                <p class="text-success float-right mb-0">En stock</p>
+                        @if($i++ < 6)
+                            <div class="carousel-item 
+                                @if($i == 1)
+                                active
+                                @endif
+                            ">
+                                <div class="col-md-4">
+                                <a href="products/{{ $product->id }}">
+                                <div class="card">
+                                    <img class="img-fluid" src="http://placehold.it/380?text={{ $product->id }}">
+                                    <div class="card-body">
+                                    <h5 class="card-title">{{ $product->name }}</h5>
+                                    <span>1 €</span> 
+                                    <p class="text-success float-right mb-0">En stock</p>
+                                    </div>
+                                </div>
+                                </a>
                                 </div>
                             </div>
-                            </a>
-                            </div>
-                        </div>
+                        @endif
                     @endforeach
                 </div>
                 <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
