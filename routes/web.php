@@ -20,8 +20,9 @@ Route::resource('products', 'ProductController');
 Route::resource('categories', 'CategoryController');
 
 //routes pages statics
+Route::get('/home', 'StaticPagesController@landing_page');
 Route::get('/', 'StaticPagesController@landing_page')->name('root');
 Route::get('/questionsfrequentes', 'StaticPagesController@frequently_questions')->name('frequently_questions');
 
 //route page admin
-Route::get('/admin/dashboard', 'AdminController@dashboard_admin');
+Route::get('/admin/dashboard', 'AdminController@dashboard_admin')->name('dashboard');

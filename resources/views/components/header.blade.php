@@ -73,6 +73,9 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
+                        @if (auth()->user()->is_admin)
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard Admin</a>
+                        @endif
                     @else
                         <a class="dropdown-item" href="{{ route('login') }}">{{ __("Se connecter") }}</a>
                         <a class="dropdown-item" href="{{ route('register') }}">{{ __("S'inscrire") }}</a>
