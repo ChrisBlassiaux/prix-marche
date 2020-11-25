@@ -16,7 +16,7 @@
   
       @if ($message = Session::get('success'))
           <div class="alert alert-success">
-              <p></p>
+              <p>Vous avez modifié ou supprimé le produit avec succés</p>
           </div>
       @endif
   
@@ -37,21 +37,21 @@
                   <td>{{ $product->price }}</td>
                   <td>{{ $product->created_at }}</td>
                   <td>
-                      <form action="" method="POST">
-  
-                          <a href="{{ route('products.show') }}" title="show">
-                              <i class="fas fa-eye text-success  fa-lg"></i>
-                          </a>
-  
-                          {{-- <a href="{{ route('products.edit') }}">
-                              <i class="fas fa-edit fa-lg"></i>
-                          </a> --}}
-                          @csrf
-                          @method('DELETE')
-  
-                          <button type="submit" title="delete" style="border: none; background-color:transparent;">
-                              <i class="fas fa-trash fa-lg text-danger"></i>
-                          </button>
+                    <a href="{{ route('products.show', ['product' => $product->id]) }}" class="btn btn-secondary">
+                        Voir plus
+                    </a>
+                    
+                    <a href="{{ route('products.edit', ['product' => $product->id]) }}" class="btn btn-secondary">
+                        Modifier
+                    </a>
+                    
+                    <form id="delete-form" method="POST" action="{{ route('products.destroy', ['product' => $product->id]) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                    
+                        <div class="form-group">
+                          <input type="submit" class="btn btn-danger" value="Supprimer">
+                        </div>
                       </form>
                   </td>
               </tr>

@@ -15,7 +15,7 @@
           <strong>Error!</strong> 
           <ul>
               @foreach ($errors->all() as $error)
-                  <li></li>
+                <li>{{ $error }}</li>
               @endforeach
           </ul>
       </div>
@@ -33,7 +33,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Description:</strong>
-                  <textarea class="form-control" name="introduction"
+                  <textarea class="form-control" name="description"
                       placeholder="Masque en tissu pour se protéger face à la pandémie..."></textarea>
               </div>
           </div>
