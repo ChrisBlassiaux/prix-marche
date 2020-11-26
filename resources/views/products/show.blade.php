@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>Nom</strong>
                 {{ $product->name }}
             </div>
         </div>
@@ -28,8 +28,14 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price</strong>
+                <strong>Prix</strong>
                 {{ $product->price }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Categorie</strong>
+                {{ $categories->find($product->category_id)->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

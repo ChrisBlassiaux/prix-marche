@@ -44,10 +44,15 @@
               </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
-              <div class="form-group">
-                  <strong>Categorie:</strong>
-                  <input type="number" name="category_id" class="form-control" placeholder="1">
-              </div>
+            <div class="form-group">
+                <strong>Categorie:</strong>
+                <select name="category_id" class="form-control">
+                    <option value="">--Choisissez une catégorie--</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">
               <button type="submit" class="btn btn-primary">Ajouter</button>

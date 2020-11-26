@@ -26,6 +26,7 @@
               <th>Nom</th>
               <th>Description</th>
               <th>Prix</th>
+              <th>Categorie</th>
               <th>Date de création</th>
               <th>Actions</th>
           </tr>
@@ -35,6 +36,7 @@
                   <td>{{ $product->name }}</td>
                   <td>{{ $product->description }}</td>
                   <td>{{ $product->price }}</td>
+                  <td>{{ $categories->find($product->category_id)->name }}</td>
                   <td>{{ $product->created_at }}</td>
                   <td>
                     <a href="{{ route('products.show', ['product' => $product->id]) }}" class="btn btn-secondary">

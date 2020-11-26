@@ -47,6 +47,17 @@
                 <input type="float" name="price" class="form-control" value=" {{ $product->price }} ">
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Categorie</strong>
+                <select name="category_id" class="form-control">
+                    <option value="{{ $categories->find($product->category_id)->id }}">{{ $categories->find($product->category_id)->name }}</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">
               <button type="submit" class="btn btn-primary">Modifier</button>
           </div>
