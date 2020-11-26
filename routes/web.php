@@ -26,3 +26,7 @@ Route::get('/questionsfrequentes', 'StaticPagesController@frequently_questions')
 
 //route page admin
 Route::get('/admin/dashboard', 'AdminController@dashboard_admin')->name('dashboard');
+
+//route page upload
+Route::get('/upload', 'FileUploadController@showUploadForm');
+Route::post('/upload', 'FileUploadController@storeUploads');
