@@ -40,7 +40,13 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Prix:</strong>
-                  <input type="number" name="price" class="form-control" placeholder="1">
+                  <input type="float" name="price" class="form-control" placeholder="1">
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>Categorie:</strong>
+                  <input type="number" name="category_id" class="form-control" placeholder="1">
               </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">

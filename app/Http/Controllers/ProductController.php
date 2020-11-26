@@ -40,8 +40,8 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required'
-             //categorie
+            'price' => 'required',
+            'category_id' => 'required'
             //image
         ]);
 
@@ -85,7 +85,8 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'category_id' => 'required'
         ]);
         $product->update($request->all());
 

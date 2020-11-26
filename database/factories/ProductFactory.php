@@ -9,6 +9,7 @@ $factory->define(Product::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
         'price' => $faker->randomDigit,
+        'category_id' => 1,
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true)
     ];
 });
