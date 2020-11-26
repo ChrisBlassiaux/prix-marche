@@ -24,6 +24,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css" integrity="sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs" crossorigin="anonymous">
         <!-- My style -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+        
+        <!-- Cloud images -->
+        @cloudinaryJS
     </head>
     <body>
         <div id="app">
