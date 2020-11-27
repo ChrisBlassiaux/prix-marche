@@ -18,6 +18,7 @@ Auth::routes();
 //routes Products
 Route::resource('products', 'ProductController');
 Route::get('/search', 'ProductController@search')->name('products.search');
+Route::get('/search/category', 'ProductController@search_category')->name('products.search_category');
 
 //routes Categories
 Route::resource('categories', 'CategoryController');

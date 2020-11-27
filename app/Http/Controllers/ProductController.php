@@ -129,4 +129,15 @@ class ProductController extends Controller
 
         return view('products.index', compact('products', 'categories'));
     }
+
+    public function search_category(Request $request)
+    {
+        $categories = Category::all();
+        $category = $request->input('category');
+
+        $products = Product::where('category_id', 'like', "$category")
+            ->paginate(6);
+
+        return view('products.index', compact('products', 'categories'));
+    }
 }

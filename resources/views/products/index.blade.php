@@ -29,7 +29,7 @@
                     <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
                     <ul class="list-group category_block">
                         @foreach ($categories as $category)
-                            <li class="list-group-item"><a href="#">{{ $category->name }}</a></li>
+                            <a href="{{ route('products.search_category', ['category' => $category->id]) }}"><li class="list-group-item">{{ $category->name }}</li></a>
                         @endforeach
                     </ul>
                 </div>
@@ -48,6 +48,9 @@
                     @if (request()->input('search'))
                         <h6 class="col-12 mb-4">{{ $products->total() }} résultat(s) pour la recherche "{{ request()->search }}"</h6>
                     @endif    
+                    @if (request()->input('category'))
+                        <h6 class="col-12 mb-4">{{ $products->total() }} résultat(s) pour la categorie "{{ $categories->find(request()->category)->name }}"</h6>
+                    @endif   
                     @foreach ($products as $product)
                         <div class="col-12 col-md-6 col-lg-4">
                         <div class="card mb-3">
