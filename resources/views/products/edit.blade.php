@@ -24,7 +24,7 @@
       </div>
   @endif
 
-  <form action="{{ action('ProductController@update', ['product' => $product]) }}" method="POST">
+  <form action="{{ action('ProductController@update', ['product' => $product]) }}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PUT')
 
@@ -58,6 +58,13 @@
                 </select>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                <img src="{{ $product->image }}" style="width: 100px">
+                <input type="file" name="image" class="form-control">
+            </div>
+          </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">
               <button type="submit" class="btn btn-primary">Modifier</button>
           </div>

@@ -41,15 +41,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'image' => 'required',
             'category_id' => 'required'
-            //image
         ]);
 
-        Product::create($request->all());
+        $image = cloudinary()->upload($request->image->getRealPath())->getSecurePath();
+
+        Product::create(['name' => $request->name, 'description' => $request->description, 'price' => $request->price, 'image' => $image, 'category_id' => $request->category_id]);
 
         return redirect()->route('products.index')
             ->with('success', 'Product created successfully.');
@@ -92,6 +95,7 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'image' => 'required',
             'category_id' => 'required'
         ]);
         $product->update($request->all());

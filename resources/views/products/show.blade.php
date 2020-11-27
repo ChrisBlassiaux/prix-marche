@@ -40,6 +40,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Image</strong>
+                <img src="{{ $product->image }}" alt="" class="w-100">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Date Created</strong>
                 {{ $product->created_at }}
             </div>

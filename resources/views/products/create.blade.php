@@ -20,7 +20,7 @@
           </ul>
       </div>
   @endif
-  <form action="{{ action('ProductController@store') }}" method="POST" >
+  <form action="{{ action('ProductController@store') }}" method="POST" enctype="multipart/form-data">
       @csrf
 
       <div class="row">
@@ -52,6 +52,12 @@
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                <input type="file" name="image" class="form-control">
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">
