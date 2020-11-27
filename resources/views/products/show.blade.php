@@ -21,6 +21,7 @@
                     <div class="card-body">
                         <h2>{{ $product->name }}</h2>
                         <p class="price_discounted">{{ $product->price }} €</p>
+                        <p class="price_discounted">{{ $product->description }}</p>
                         <form method="get" action="cart.html">
                             
                             <div class="form-group">
