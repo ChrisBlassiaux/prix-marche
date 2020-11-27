@@ -2,7 +2,7 @@
     <!-- Infos bar -->
     <div class="bg-light p-3 d-md-flex d-block justify-content-between align-items-center">
         <div class="logo-title mb-2">
-            <a href="{{ route('root') }}"><img src="images/logo.png" alt="" class="logo"></a>
+            <a href="{{ route('root') }}"><img src="https://res.cloudinary.com/dh2bqrjaj/image/upload/v1606483204/logo.png" alt="" class="logo"></a>
             <h1 class="ml-2"><a href="{{ route('root') }}">Prix Marché</a></h1>
         </div>
 

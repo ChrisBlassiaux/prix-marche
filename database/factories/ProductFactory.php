@@ -10,7 +10,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $faker->word,
         'price' => $faker->randomDigit,
         'category_id' => 1,
-        'image' => "https://res.cloudinary.com/dh2bqrjaj/image/upload/v1606482946/product_img_a1stjj.png",
+        'image' => "https://res.cloudinary.com/dh2bqrjaj/image/upload/v1606482946/product_img.png",
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true)
     ];
 });

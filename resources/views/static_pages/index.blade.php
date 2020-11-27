@@ -20,7 +20,7 @@
                                 <div class="col-md-4">
                                 <a href="products/{{ $product->id }}">
                                 <div class="card">
-                                    <img class="img-fluid" src="http://placehold.it/380?text={{ $product->id }}">
+                                    <img src="{{ $product->image }}"  alt="Card image cap" class="img-fluid">
                                     <div class="card-body">
                                     <h5 class="card-title">{{ $product->name }}</h5>
                                     <span>1 €</span> 
