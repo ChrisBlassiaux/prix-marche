@@ -117,4 +117,16 @@ class ProductController extends Controller
         return redirect()->route('products.index')
             ->with('success', 'Product deleted successfully');
     }
+
+    public function search(Request $request)
+    {
+       $categories = Category::all();
+       $search = $request->input('search');
+
+       $products = Product::where('name', 'like', "%$search%")
+            ->orWhere('description', 'like', "%$search%")
+            ->paginate(6);
+
+        return view('products.index', compact('products', 'categories'));
+    }
 }

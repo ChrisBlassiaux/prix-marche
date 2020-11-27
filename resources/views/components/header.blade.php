@@ -27,18 +27,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-          <form class="form-inline my-2 my-lg-0">
-            <div class="btn-group mr-2" role="group" aria-label="Button group with nested dropdown">
-              <button type="button" class="btn btn-secondary mb-2 mb-sm-0 w-100">Catégories</button>
-              <div class="btn-group mb-2 mb-sm-0" role="group">
-                <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
-                  <a class="dropdown-item" href="#">Dropdown link</a>
-                  <a class="dropdown-item" href="#">Dropdown link</a>
-                </div>
-              </div>
-            </div>
-            <input class="form-control mr-sm-2" type="text" placeholder="Recherche...">
+        <form class="form-inline my-2 my-lg-0" action="{{ route('products.search') }}" >
+            <input class="form-control mr-sm-2" type="text" placeholder="Recherche..." name="search" value=" {{ request()->search ?? '' }} ">
             <button class="btn btn-secondary my-2 my-sm-0 btn-sm-block btn-inline" type="submit">Rechercher</button>
           </form>
   

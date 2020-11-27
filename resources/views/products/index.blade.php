@@ -17,7 +17,7 @@
   
       @if ($message = Session::get('success'))
           <div class="alert alert-success">
-              <p>Vous avez modifié ou supprimé le produit avec succés</p>
+              <p>Vous avez créé, modifié ou supprimé le produit avec succés</p>
           </div>
       @endif
   
@@ -45,7 +45,9 @@
             </div>
             <div class="col">
                 <div class="row">
-
+                    @if (request()->input('search'))
+                        <h6 class="col-12 mb-4">{{ $products->total() }} résultat(s) pour la recherche "{{ request()->search }}"</h6>
+                    @endif    
                     @foreach ($products as $product)
                         <div class="col-12 col-md-6 col-lg-4">
                         <div class="card mb-3">
