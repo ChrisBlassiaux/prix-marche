@@ -51,7 +51,7 @@
 
         <div class="categories text-white mt-5">
             @foreach ($categories as $category)
-                <a href="#">
+                <a href="{{ route('products.index') }}">
                     <div class="category d-flex flex-column align-items-center p-3 rounded">
                         {!! $category->icon !!}
                         {{ $category->name }}

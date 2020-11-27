@@ -61,7 +61,7 @@
             </div>
             </div>
         </div>
-        <div class="bg-primary text-center p-2">
+        <div class="bg-primary text-white text-center p-2">
             <a href="#">Mentions légales</a> | <a href="#">Conditions générales d’utilisation et de ventes</a>
         </div>
     </footer>
