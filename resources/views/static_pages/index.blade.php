@@ -47,7 +47,7 @@
     </div>
 
     <div class="container mt-5">
-        <h2 class="text-primary">Découvrez nos offres par catégories <a href="#" class="text-info h6">Voir tout</a></h2>
+        <h2 class="text-primary">Découvrez nos offres par catégories <a href="{{ route('products.index') }}" class="text-info h6">Voir tout</a></h2>
 
         <div class="categories text-white mt-5">
             @foreach ($categories as $category)
