@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -6,7 +7,7 @@
       <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Index produits</h2>
+                <h2>Catalogue</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}" title="Create a product">Ajouter un produit</a>
@@ -20,49 +21,53 @@
           </div>
       @endif
   
-      <table class="table table-bordered table-responsive-lg">
-          <tr>
-              <th>Numéro</th>
-              <th>Nom</th>
-              <th>Description</th>
-              <th>Prix</th>
-              <th>Categorie</th>
-              <th>Image</th>
-              <th>Date de création</th>
-              <th>Actions</th>
-          </tr>
-          @foreach ($products as $product)
-              <tr>
-                  <td>{{ $product->id }}</td>
-                  <td>{{ $product->name }}</td>
-                  <td>{{ $product->description }}</td>
-                  <td>{{ $product->price }}</td>
-                  <td>{{ $categories->find($product->category_id)->name }}</td>
-                  <td><img src="{{ $product->image }}" style="width: 100px"></td>
-                  <td>{{ $product->created_at }}</td>
-                  <td>
-                    <a href="{{ route('products.show', ['product' => $product->id]) }}" class="btn btn-secondary">
-                        Voir plus
-                    </a>
-                    
-                    <a href="{{ route('products.edit', ['product' => $product->id]) }}" class="btn btn-secondary">
-                        Modifier
-                    </a>
-                    
-                    <form id="delete-form" method="POST" action="{{ route('products.destroy', ['product' => $product->id]) }}">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                    
-                        <div class="form-group">
-                          <input type="submit" class="btn btn-danger" value="Supprimer">
-                        </div>
-                      </form>
-                  </td>
-              </tr>
-          @endforeach
-      </table>
-  
-      {{-- {!! $products->links() !!} --}}
 
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+                    <ul class="list-group category_block">
+                        @foreach ($categories as $category)
+                            <li class="list-group-item"><a href="#">{{ $category->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="btn-group w-100" role="group" aria-label="Button group with nested dropdown">
+                  <button type="button" class="btn btn-primary mb-2 mb-sm-0 w-100">Trier</button>
+                  <div class="btn-group mb-2 mb-sm-0" role="group">
+                    <button id="btnGroupDrop3" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                      <a class="dropdown-item" href="#">Prix croissant</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+
+                    @foreach ($products as $product)
+                        <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card mb-3">
+                            <a href="{{ route('products.show', ['product' => $product->id]) }}" title="View Product">
+                                <img src="{{ $product->image }}"  alt="Card image cap" class="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $product->name }}</h4>
+                                    <div class="row">
+                                        <div class="col">{{ $product->price }} €</div>
+                                        <div class="col text-success text-right">En stock</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        </div>
+                    @endforeach
+                    
+                </div>
+            </div>
+  
+        </div>
+      </div>
     <!-- / content -->
+   
 @endsection
