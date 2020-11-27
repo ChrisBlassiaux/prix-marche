@@ -2,52 +2,56 @@
 
 @section('content')
     <!-- content -->
-    <div class="row">
-      <div class="col-lg-12 margin-tb">
-          <div class="pull-left">
-              <h2>  </h2>
-          </div>
-          <div class="pull-right">
-              <a class="btn btn-primary" href={{ url()->previous()}} title="Go back"> Retour</a>
-          </div>
-      </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Nom</strong>
-                {{ $product->name }}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Image -->
+            <div class="col-12 col-lg-6">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+                        <a href="" data-toggle="modal" data-target="#productModal">
+                            <img src="{{ $product->image }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Description</strong>
-                {{ $product->description }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Prix</strong>
-                {{ $product->price }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Categorie</strong>
-                {{ $categories->find($product->category_id)->name }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Image</strong>
-                <img src="{{ $product->image }}" alt="" class="w-100">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Date Created</strong>
-                {{ $product->created_at }}
+    
+            <!-- Add to cart -->
+            <div class="col-12 col-lg-6 add_to_cart_block">
+                <div class="card bg-light mb-3">
+                    <div class="card-body">
+                        <h2>{{ $product->name }}</h2>
+                        <p class="price_discounted">{{ $product->price }} €</p>
+                        <form method="get" action="cart.html">
+                            
+                            <div class="form-group">
+                                <label>Quantity :</label>
+                               <div class="row">
+                                 <div class="col">
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                          <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                              <i class="fa fa-minus"></i>
+                                          </button>
+                                      </div>
+                                      <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
+                                      <div class="input-group-append">
+                                          <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                              <i class="fa fa-plus"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                 </div>
+                                 <div class="col">
+                                  <span class="fa fa-heart fa-2x text-primary"></span>
+                                 </div>
+                               </div>
+                            </div>
+                            <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">
+                                <i class="fa fa-shopping-cart"></i> Ajouter au panier
+                            </a>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
