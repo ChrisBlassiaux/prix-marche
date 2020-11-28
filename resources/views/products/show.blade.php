@@ -22,8 +22,11 @@
                         <h2>{{ $product->name }}</h2>
                         <p class="price_discounted">{{ $product->price }} €</p>
                         <p class="price_discounted">{{ $product->description }}</p>
-                        <form method="get" action="cart.html">
-                            
+                    <form method="POST" action="{{ route('cart.store') }}">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                      
+{{--                             
                             <div class="form-group">
                                 <label>Quantity :</label>
                                <div class="row">
@@ -46,10 +49,11 @@
                                   <span class="fa fa-heart fa-2x text-primary"></span>
                                  </div>
                                </div>
-                            </div>
-                            <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">
+                            </div> --}}
+                            <button type="submit"  class="btn btn-success btn-lg btn-block text-uppercase">
                                 <i class="fa fa-shopping-cart"></i> Ajouter au panier
-                            </a>
+                            </button>
+                
                         </form>
                     </div>
                 </div>

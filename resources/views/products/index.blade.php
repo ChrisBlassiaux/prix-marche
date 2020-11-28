@@ -15,13 +15,6 @@
           </div>
       </div>
   
-      @if ($message = Session::get('success'))
-          <div class="alert alert-success">
-              <p>Vous avez créé, modifié ou supprimé le produit avec succés</p>
-          </div>
-      @endif
-  
-
       <div class="container mt-5">
         <div class="row">
             <div class="col-12 col-sm-3">

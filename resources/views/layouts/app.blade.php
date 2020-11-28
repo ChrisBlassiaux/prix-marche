@@ -32,9 +32,9 @@
         <div id="app">
             
             <x-header />
-            {{-- <x-alerts /> --}}
             
             <main class="py-4 container">
+                <x-alerts />
                 @yield('content')
             </main>
 

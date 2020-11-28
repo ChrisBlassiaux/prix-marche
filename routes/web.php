@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Gloudemans\Shoppingcart\Facades\Cart;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,15 @@ Route::get('/search/category', 'ProductController@search_category')->name('produ
 
 //routes Categories
 Route::resource('categories', 'CategoryController');
+
+//routes Cart
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::post('/cart/add', 'CartController@store')->name('cart.store');
+Route::delete('/cart/{rowId}', 'CartController@destroy')->name('cart.destroy');
+
+// Route::get('/emptycart', function() {
+//     Cart::destroy();
+// });
 
 //routes pages statics
 Route::get('/home', 'StaticPagesController@landing_page');

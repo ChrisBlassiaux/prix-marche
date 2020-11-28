@@ -73,8 +73,9 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('cart.index') }}">
                   <span class="fa fa-cart-plus fa-2x ml-3"></span>
+                  <span class="badge badge-pill badge-secondary ml-2">{{ Cart::count() }}</span>
                 </a>
               </li>
             </ul>
