@@ -27,6 +27,9 @@
         
         <!-- Cloud images -->
         @cloudinaryJS
+
+        <!-- JS Stripe -->
+        <script src="https://js.stripe.com/v3/"></script>
     </head>
     <body>
         <div id="app">

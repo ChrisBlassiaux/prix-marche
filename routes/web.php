@@ -33,6 +33,9 @@ Route::delete('/cart/{rowId}', 'CartController@destroy')->name('cart.destroy');
 //     Cart::destroy();
 // });
 
+//route Checkout
+Route::get('/payment', 'CheckoutController@index')->name('checkout.index');
+
 //routes pages statics
 Route::get('/home', 'StaticPagesController@landing_page');
 Route::get('/', 'StaticPagesController@landing_page')->name('root');
@@ -40,3 +43,4 @@ Route::get('/questionsfrequentes', 'StaticPagesController@frequently_questions')
 
 //route page admin
 Route::get('/admin/dashboard', 'AdminController@dashboard_admin')->name('dashboard');
+
