@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -26,7 +27,21 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        if (auth()->user()) {
+            if (auth()->user()->is_admin) {
+                return view('categories.create');
+            } else {
+                return view('static_pages.index', [
+                    'products' => Product::all(),
+                    'categories' => Category::all()
+                ]);
+            } 
+        } else {
+            return view('static_pages.index', [
+                'products' => Product::all(),
+                'categories' => Category::all()
+            ]);
+        }
     }
 
     /**
@@ -67,7 +82,22 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('categories.edit', compact('category'));
+        if (auth()->user()) {
+            if (auth()->user()->is_admin) {
+                return view('categories.edit', compact('category'));
+            } else {
+                return view('static_pages.index', [
+                    'products' => Product::all(),
+                    'categories' => Category::all()
+                ]);
+            } 
+        } else {
+            return view('static_pages.index', [
+                'products' => Product::all(),
+                'categories' => Category::all()
+            ]);
+        }
+        
     }
 
     /**

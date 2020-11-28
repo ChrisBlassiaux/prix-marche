@@ -13,7 +13,7 @@
             </div>
             <div class="col-sm-3 mb-4">
               <div class="d-flex align-items-center">
-                <span class="fa fa-truck fa-2x mr-3"></span>
+                <span class="fa fa-shopping-basket fa-2x mr-3"></span>
                 <div>
                   <h5>Achats sans soucis</h5>
                   <p class="mb-0">Chaque commande est fournis mains à mains</p>
@@ -22,7 +22,7 @@
             </div>
             <div class="col-sm-3 mb-4">
               <div class="d-flex align-items-center">
-                <span class="fa fa-truck fa-2x mr-3"></span>
+                <span class="fas fa-credit-card fa-2x mr-3"></span>
                 <div>
                   <h5>Paiement sécurisé</h5>
                   <p class="mb-0">Payez sans vous souciez lors du retrait</p>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-3">
               <div class="d-flex align-items-center">
-                <span class="fa fa-truck fa-2x mr-3"></span>
+                <span class="fas fa-truck-loading fa-2x mr-3"></span>
                 <div>
                   <h5>Livraison Valenciennoise</h5>
                   <p class="mb-0">Ce que vous voulez, préparé pour les valenciennois et les alentours</p>
@@ -54,9 +54,9 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-right">
-                <a href="#" class="d-block pt-2 pb-2">Première visite</a>
-                <a href="#" class="d-block pt-2 pb-2">Livraison retrait</a>
-                <a href="#" class="d-block pt-2 pb-2">Contact</a>
+                <a href="{{ route('frequently_questions') }}" class="d-block pt-2 pb-2">Première visite</a>
+                <a href="{{ route('delivery') }}" class="d-block pt-2 pb-2">Livraison - Retrait</a>
+                <a href="{{ route('contact') }}" class="d-block pt-2 pb-2">Contact</a>
                 </div>
             </div>
             </div>

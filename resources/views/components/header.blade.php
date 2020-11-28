@@ -3,22 +3,22 @@
     <div class="bg-light p-3 d-md-flex d-block justify-content-between align-items-center">
         <div class="logo-title mb-2">
             <a href="{{ route('root') }}"><img src="https://res.cloudinary.com/dh2bqrjaj/image/upload/v1606483204/logo.png" alt="" class="logo"></a>
-            <h1 class="ml-2"><a href="{{ route('root') }}">Prix Marché</a></h1>
+            <h1 class="ml-2 mb-0 font-weight-bold text-primary"><a href="{{ route('root') }}">Prix Marché</a></h1>
         </div>
 
         <div class="desc">
             <p class="text-left text-md-right">Tous vos besoins à petits prix dans le Valenciennois</p>
             <ul class="steps list-unstyled font-weight-bold d-md-flex d-block">
-            <li class="step mr-2">
-                <span class="bg-primary text-white rounded-circle d-inline-block text-center">1</span> 
+            <li class="step mr-3">
+                <span class="bg-primary text-white rounded-circle d-inline-block text-center mr-2">1</span> 
                 Choix et commande des articles
             </li>
-            <li class="step mr-2">
-                <span class="bg-primary text-white rounded-circle d-inline-block text-center">2</span>
+            <li class="step mr-3">
+                <span class="bg-primary text-white rounded-circle d-inline-block text-center mr-2">2</span>
                 Retrait des articles
             </li>
             <li class="step">
-                <span class="bg-primary text-white rounded-circle d-inline-block text-center">3</span>
+                <span class="bg-primary text-white rounded-circle d-inline-block text-center mr-2">3</span>
                 Paiement des articles
             </li>
             </ul>

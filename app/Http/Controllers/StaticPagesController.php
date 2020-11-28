@@ -22,5 +22,15 @@ class StaticPagesController extends Controller
     {
       return view('static_pages.frequently_questions');
     }
+
+    public function delivery()
+    {
+      return view('static_pages.delivery');
+    }
+
+    public function contact()
+    {
+      return view('static_pages.contact');
+    }
     
 }

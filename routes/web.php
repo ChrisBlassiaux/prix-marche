@@ -39,6 +39,8 @@ Route::get('/payment', 'CheckoutController@index')->name('checkout.index');
 //routes pages statics
 Route::get('/home', 'StaticPagesController@landing_page');
 Route::get('/', 'StaticPagesController@landing_page')->name('root');
+Route::get('/delivery', 'StaticPagesController@delivery')->name('delivery');
+Route::get('/contact', 'StaticPagesController@contact')->name('contact');
 Route::get('/questionsfrequentes', 'StaticPagesController@frequently_questions')->name('frequently_questions');
 
 //route page admin

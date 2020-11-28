@@ -20,10 +20,10 @@
                                 <div class="col-md-4">
                                 <a href="products/{{ $product->id }}">
                                 <div class="card">
-                                    <img src="{{ $product->image }}"  alt="Card image cap" class="img-fluid">
+                                    <img src="{{ $product->image }}"  alt="Card image cap" class="img-fluid" style="height: 300px">
                                     <div class="card-body">
                                     <h5 class="card-title">{{ $product->name }}</h5>
-                                    <span>1 €</span> 
+                                    <span>{{ $product->price }}€</span> 
                                     <p class="text-success float-right mb-0">En stock</p>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                 <a href="{{ route('products.index') }}">
                     <div class="category d-flex flex-column align-items-center p-3 rounded">
                         {!! $category->icon !!}
-                        {{ $category->name }}
+                        <p class="mb-0 mt-2">{{ $category->name }}</p>
                     </div>
                 </a>
             @endforeach
@@ -62,7 +62,7 @@
         </div>
     </div>
   
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <h2 class="text-primary">Avoir le choix chez Prix Marché</h2>
 
         <div class="row mt-5 text-center">
@@ -90,10 +90,10 @@
         <div class="container">
             <div class="row">
             <div class="col-3">
-                <h2>COVID</h2>
+                <h2 class="pt-2 pb-2">ANNONCE COVID</h2>
             </div>
-            <div class="col-9">
-                <p>Message concernant les conditions sanitaires ...</p>
+            <div class="col-9 pt-5 pb-5">
+                <p class="font-weight-bold">Les ventes sont toujours d'actualité même durant la crise sanitaire. La livraison se fait dans le respect des règles sanitaires.</p>
             </div>
             </div>
         </div>

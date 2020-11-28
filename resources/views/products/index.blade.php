@@ -9,9 +9,13 @@
             <div class="pull-left">
                 <h2>Catalogue</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}" title="Create a product">Ajouter un produit</a>
-              </div>
+            @if (auth()->user())
+                @if (auth()->user()->is_admin)
+                    <div class="pull-right text-right">
+                        <a class="btn btn-success" href="{{ route('products.create') }}" title="Create a product">Ajouter un produit</a>
+                    </div>
+                @endif
+            @endif
           </div>
       </div>
   
@@ -48,7 +52,7 @@
                         <div class="col-12 col-md-6 col-lg-4">
                         <div class="card mb-3">
                             <a href="{{ route('products.show', ['product' => $product->id]) }}" title="View Product">
-                                <img src="{{ $product->image }}"  alt="Card image cap" class="card-img-top">
+                                <img src="{{ $product->image }}"  alt="Card image cap" class="card-img-top" style="height: 250px">
                                 <div class="card-body">
                                     <h4 class="card-title">{{ $product->name }}</h4>
                                     <div class="row">

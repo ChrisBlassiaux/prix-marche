@@ -14,7 +14,9 @@ class AdminController extends Controller
     {
       if (! auth()->user()->is_admin) {
           return view('products.index', [
-            'products' => Product::all()
+            'products' => Product::all(),
+            'categories' => Category::all(),
+            'users' => User::all()
           ]);
       } else {
         return view('admin.dashboard_admin',[

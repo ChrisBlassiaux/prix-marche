@@ -53,7 +53,16 @@
                             <button type="submit"  class="btn btn-success btn-lg btn-block text-uppercase">
                                 <i class="fa fa-shopping-cart"></i> Ajouter au panier
                             </button>
+
+                           
                 
+                            @if (auth()->user())
+                                @if (auth()->user()->is_admin)
+                                    <a href="{{ route('products.edit', ['product' => $product->id]) }}" class="btn btn-secondary mt-3">
+                                        Modifier
+                                    </a>
+                                @endif
+                            @endif
                         </form>
                     </div>
                 </div>
